@@ -1,0 +1,42 @@
+{
+  "name": "@react-pdf/text-layout",
+  "version": "0.1.0",
+  "description": "React-pdf text layout engine",
+  "main": "dist/index.js",
+  "repository": "https://github.com/react-pdf/text-layout",
+  "author": "Diego Muracciole <diegomuracciole@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel ./src --out-dir ./dist",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@react-pdf/font-substitution": "^1.0.6",
+    "@react-pdf/linebreaker": "^1.1.2",
+    "@textkit/core": "^0.1.4",
+    "@textkit/justification-engine": "^0.1.4",
+    "@textkit/line-fragment-generator": "^0.1.4",
+    "@textkit/script-itemizer": "^0.1.4",
+    "@textkit/tab-engine": "^0.1.4",
+    "@textkit/text-decoration-engine": "^0.1.4",
+    "@textkit/truncation-engine": "^0.1.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-preset-node6": "^11.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.14.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1"
+  },
+}
