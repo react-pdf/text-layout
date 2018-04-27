@@ -1,30 +1,30 @@
-import LineBreaker from '@react-pdf/linebreaker';
-import FontSubstitutionEngine from '@react-pdf/font-substitution';
-import JustificationEngine from '@textkit/justification-engine';
-import LineFragmentGenerator from '@textkit/line-fragment-generator';
-import ScriptItemizer from '@textkit/script-itemizer';
-import TabEngine from '@textkit/tab-engine';
-import TextDecorationEngine from '@textkit/text-decoration-engine';
-import TruncationEngine from '@textkit/truncation-engine';
+import lineBreaker from '@react-pdf/linebreaker';
+import fontSubstitutionEngine from '@react-pdf/font-substitution';
+import tabEngine from '@textkit/tab-engine';
+import scriptItemizer from '@textkit/script-itemizer';
+import truncationEngine from '@textkit/truncation-engine';
+import justificationEngine from '@textkit/justification-engine';
+import textDecorationEngine from '@textkit/text-decoration-engine';
+import lineFragmentGenerator from '@textkit/line-fragment-generator';
 import { LayoutEngine as BaseLayoutEngine } from '@textkit/core';
 
 // justificationEngine values
 const shrinkWhitespaceFactor = { before: -0.5, after: -0.5 };
 
-const defaultEngines = {
-  lineBreaker: LineBreaker,
-  lineFragmentGenerator: LineFragmentGenerator,
-  justificationEngine: JustificationEngine,
-  truncationEngine: TruncationEngine,
-  decorationEngine: TextDecorationEngine,
-  tabEngine: TabEngine,
-  fontSubstitutionEngine: FontSubstitutionEngine,
-  scriptItemizer: ScriptItemizer
-};
-
 export class LayoutEngine extends BaseLayoutEngine {
-  constructor(engines = {}) {
-    super(Object.assign({}, engines, defaultEngines));
+  constructor({ hyphenationCallback }) {
+    const engines = {
+      tabEngine: tabEngine(),
+      scriptItemizer: scriptItemizer(),
+      truncationEngine: truncationEngine(),
+      decorationEngine: textDecorationEngine(),
+      lineFragmentGenerator: lineFragmentGenerator(),
+      fontSubstitutionEngine: fontSubstitutionEngine(),
+      lineBreaker: lineBreaker({ hyphenationCallback }),
+      justificationEngine: justificationEngine({ shrinkWhitespaceFactor }),
+    };
+
+    super(engines);
   }
 }
 
