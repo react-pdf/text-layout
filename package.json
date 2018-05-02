@@ -1,6 +1,6 @@
 {
   "name": "@react-pdf/text-layout",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "React-pdf text layout engine",
   "main": "dist/index.js",
   "repository": "https://github.com/react-pdf/text-layout",
@@ -14,15 +14,15 @@
     "dist"
   ],
   "dependencies": {
-    "@react-pdf/font-substitution": "^1.0.7",
+    "@react-pdf/font-substitution": "^1.1.0",
     "@react-pdf/linebreaker": "^1.2.2",
-    "@textkit/core": "^0.1.6",
-    "@textkit/justification-engine": "^0.1.5",
-    "@textkit/line-fragment-generator": "^0.1.5",
-    "@textkit/script-itemizer": "^0.1.5",
-    "@textkit/tab-engine": "^0.1.5",
-    "@textkit/text-decoration-engine": "^0.1.5",
-    "@textkit/truncation-engine": "^0.1.5"
+    "@textkit/core": "^0.1.7",
+    "@textkit/justification-engine": "^0.1.6",
+    "@textkit/line-fragment-generator": "^0.1.6",
+    "@textkit/script-itemizer": "^0.1.6",
+    "@textkit/tab-engine": "^0.1.6",
+    "@textkit/text-decoration-engine": "^0.1.6",
+    "@textkit/truncation-engine": "^0.1.6"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
