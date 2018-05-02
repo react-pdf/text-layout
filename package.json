@@ -1,6 +1,6 @@
 {
   "name": "@react-pdf/text-layout",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "React-pdf text layout engine",
   "main": "dist/index.js",
   "repository": "https://github.com/react-pdf/text-layout",
@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@react-pdf/font-substitution": "^1.1.0",
-    "@react-pdf/linebreaker": "^1.2.2",
+    "@react-pdf/linebreaker": "^1.2.3",
     "@textkit/core": "^0.1.7",
     "@textkit/justification-engine": "^0.1.6",
     "@textkit/line-fragment-generator": "^0.1.6",
