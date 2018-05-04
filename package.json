@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@react-pdf/font-substitution": "^1.1.0",
-    "@react-pdf/linebreaker": "^1.2.4",
+    "@react-pdf/linebreaker": "^1.2.5",
     "@textkit/core": "^0.1.8",
     "@textkit/justification-engine": "^0.1.6",
     "@textkit/line-fragment-generator": "^0.1.6",
