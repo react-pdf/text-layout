@@ -8,21 +8,23 @@
   "license": "MIT",
   "scripts": {
     "build": "babel ./src --out-dir ./dist",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "jest"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "@react-pdf/font-substitution": "^1.1.0",
-    "@react-pdf/linebreaker": "^1.2.5",
     "@textkit/core": "^0.1.8",
     "@textkit/justification-engine": "^0.1.6",
     "@textkit/line-fragment-generator": "^0.1.6",
+    "@textkit/linebreaker": "^0.1.5",
     "@textkit/script-itemizer": "^0.1.6",
     "@textkit/tab-engine": "^0.1.6",
     "@textkit/text-decoration-engine": "^0.1.6",
-    "@textkit/truncation-engine": "^0.1.6"
+    "@textkit/truncation-engine": "^0.1.6",
+    "hyphenation.en-us": "^0.2.1",
+    "hypher": "^0.2.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -38,5 +40,8 @@
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1"
+  },
+  "peerDependencies": {
+    "@react-pdf/pdfkit": "latest"
   }
 }
