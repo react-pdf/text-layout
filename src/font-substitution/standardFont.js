@@ -29,7 +29,11 @@ class StandardFont {
 
   getGlyph(id) {
     if (!this.glyphs[id]) {
-      this.glyphs[id] = { id, _font: this.src };
+      this.glyphs[id] = {
+        id,
+        _font: this.src,
+        name: this.src.font.characterToGlyph(id)
+      };
     }
 
     return this.glyphs[id];
