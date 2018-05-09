@@ -4,6 +4,7 @@ class StandardFont {
   constructor(src) {
     this.name = src;
     this.src = PDFFont.open(null, src);
+    this.glyphs = {};
   }
 
   layout(str) {
@@ -12,20 +13,26 @@ class StandardFont {
     return {
       positions,
       stringIndices: positions.map((_, i) => i),
-      glyphs: encoded.map((g, i) => ({
-        id: g,
-        _font: this.src,
-        advanceWidth: positions[i].advanceWidth,
-      })),
+      glyphs: encoded.map((g, i) => {
+        const glyph = this.getGlyph(parseInt(g, 16));
+        glyph.advanceWidth = positions[i].advanceWidth;
+        return glyph;
+      }),
     }
   }
 
   glyphForCodePoint(codePoint) {
-    return this.getGlyph({ id: codePoint, _font: this.src, advanceWidth: 400 });
+    const glyph = this.getGlyph(codePoint);
+    glyph.advanceWidth = 400;
+    return glyph;
   }
 
-  getGlyph(glyph) {
-    return glyph;
+  getGlyph(id) {
+    if (!this.glyphs[id]) {
+      this.glyphs[id] = { id, _font: this.src };
+    }
+
+    return this.glyphs[id];
   }
 
   hasGlyphForCodePoint(codePoint) {

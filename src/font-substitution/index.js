@@ -36,17 +36,20 @@ export default () => ({ Run }) => (
 
         for (const char of string.slice(run.start, run.end)) {
           const codePoint = char.codePointAt();
+          let font = defaultFont;
 
-          let font = null;
-          if (defaultFont.hasGlyphForCodePoint(codePoint)) {
-            font = defaultFont;
-          } else {
+          // If the default font does not have a glyph
+          // and the fallback font does, we use it
+          if (
+            !defaultFont.hasGlyphForCodePoint(codePoint) &&
+            this.fallbackFont.hasGlyphForCodePoint(codePoint)
+          ) {
             font = this.fallbackFont;
           }
 
           if (font !== lastFont) {
             if (lastFont) {
-              res.push(new Run(lastIndex, index, {font: lastFont}));
+              res.push(new Run(lastIndex, index, { font: lastFont }));
             }
 
             lastFont = font;
@@ -58,7 +61,7 @@ export default () => ({ Run }) => (
       }
 
       if (lastIndex < string.length) {
-        res.push(new Run(lastIndex, string.length, {font: lastFont}));
+        res.push(new Run(lastIndex, string.length, { font: lastFont }));
       }
 
       return res;
