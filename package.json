@@ -15,7 +15,7 @@
     "dist"
   ],
   "dependencies": {
-    "@textkit/core": "^0.1.8",
+    "@textkit/core": "^0.1.9",
     "@textkit/justification-engine": "^0.1.6",
     "@textkit/line-fragment-generator": "^0.1.6",
     "@textkit/linebreaker": "^0.1.5",
