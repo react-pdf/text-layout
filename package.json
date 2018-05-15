@@ -15,12 +15,11 @@
     "dist"
   ],
   "dependencies": {
-    "@textkit/core": "^0.1.10",
+    "@textkit/core": "^0.1.11",
     "@textkit/justification-engine": "^0.1.6",
     "@textkit/line-fragment-generator": "^0.1.6",
     "@textkit/linebreaker": "^0.1.6",
     "@textkit/script-itemizer": "^0.1.6",
-    "@textkit/tab-engine": "^0.1.6",
     "@textkit/text-decoration-engine": "^0.1.7",
     "@textkit/truncation-engine": "^0.1.6",
     "hyphenation.en-us": "^0.2.1",
